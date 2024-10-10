@@ -19,6 +19,8 @@ The core of the workflow is the `PREDICT_SHIFTCRYPT` module, which handles the e
 
 ## Pipeline Structure
 
+![flow](https://github.com/Bio2Byte/nf-b2btools-shiftcrypt/blob/d55b1f56fbdfbdafb78c125c874a13b7dd6ed280/flowchart.png)
+
 ```
 params.inputDir = params.inputDir ?: "./data"
 params.outputDir = params.outputDir ?: "./results"
@@ -48,25 +50,18 @@ workflow {
 ## Requirements
 
 - *Nextflow*: The pipeline is written in Nextflow DSL2 and requires Nextflow to be installed.
-- *Docker* or Singularity: Containers are required to run the pipeline in a reproducible environment.
+- *Conda*: Conda environments are required to run the pipeline.
 
 ## Commands
 
 To run the ShiftCrypt pipeline from this repository, follow these steps:
 
-1.	Clone the repository:
+1.	Prepare your input data files. Place your .nef or .nmr files in the input directory, or specify a custom input directory using the `--inputDir` parameter.
+2.	Run the pipeline with Nextflow:
 
 ```bash
-git clone https://github.com/Bio2Byte/nf-b2btools-shiftcrypt.git
-cd nf-b2btools-shiftcrypt
-```
-
-2.	Prepare your input data files. Place your .nef or .nmr files in the input directory, or specify a custom input directory using the --inputDir parameter.
-3.	Run the pipeline with Nextflow:
-
-```bash
-nextflow run https://github.com/Bio2Byte/nf-b2btools-shiftcrypt \
-    --inputDir ./data \
+nextflow run nf-b2btools-shiftcrypt \
+    --inputDir ./data/nef_examples \
     --outputDir ./results \
     --model 1 \
     --isModelStar false \
@@ -79,7 +74,7 @@ nextflow run https://github.com/Bio2Byte/nf-b2btools-shiftcrypt \
 # `–originalNumbering`: Use true to retain original sequence numbering.
 ```
 
-4.	Monitor the pipeline execution through the console output or view logs in the working directory.
+3. Monitor the pipeline execution through the console output or view logs in the working directory.
 
 ## Output
 
