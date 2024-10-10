@@ -54,14 +54,16 @@ workflow {
 
 To run the ShiftCrypt pipeline from this repository, follow these steps:
 
-	1.	Clone the repository:
+1.	Clone the repository:
+
 ```bash
 git clone https://github.com/Bio2Byte/nf-b2btools-shiftcrypt.git
 cd nf-b2btools-shiftcrypt
 ```
 
-	2.	Prepare your input data files. Place your .nef or .nmr files in the input directory, or specify a custom input directory using the --inputDir parameter.
-	3.	Run the pipeline with Nextflow:
+2.	Prepare your input data files. Place your .nef or .nmr files in the input directory, or specify a custom input directory using the --inputDir parameter.
+3.	Run the pipeline with Nextflow:
+
 ```bash
 nextflow run https://github.com/Bio2Byte/nf-b2btools-shiftcrypt \
     --inputDir ./data \
@@ -69,15 +71,15 @@ nextflow run https://github.com/Bio2Byte/nf-b2btools-shiftcrypt \
     --model 1 \
     --isModelStar false \
     --originalNumbering true
+
+# `–inputDir`: Directory containing input files (.nef or .nmr).
+# `–outputDir`: Directory to store the results.
+# `–model`: Choose from model 1, 2, or 3 based on atom set.
+# `–isModelStar`: Set to true if using NMR-STAR files, otherwise leave as false for NEF files.
+# `–originalNumbering`: Use true to retain original sequence numbering.
 ```
 
-- `–inputDir`: Directory containing input files (.nef or .nmr).
-- `–outputDir`: Directory to store the results.
-- `–model`: Choose from model 1, 2, or 3 based on atom set.
-- `–isModelStar`: Set to true if using NMR-STAR files, otherwise leave as false for NEF files.
-- `–originalNumbering`: Use true to retain original sequence numbering.
-
-	4.	Monitor the pipeline execution through the console output or view logs in the working directory.
+4.	Monitor the pipeline execution through the console output or view logs in the working directory.
 
 ## Output
 
