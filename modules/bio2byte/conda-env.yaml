@@ -1,0 +1,10 @@
+name: virflow-conda-b2btools
+channels:
+  - defaults
+  - conda-forge
+  - bioconda
+dependencies:
+  - python ==3.10
+  - pip
+  - pip:
+    - b2btools==3.0.7
